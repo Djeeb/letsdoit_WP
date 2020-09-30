@@ -2,6 +2,7 @@
 
 function letsdoit_supports (){
     add_theme_support('title-tag'); // https://developer.wordpress.org/reference/functions/add_theme_support/
+    add_theme_support('post-thumbnails');
 }
 
 function letsdoit_register_assets(){

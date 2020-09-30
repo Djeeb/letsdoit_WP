@@ -1,5 +1,6 @@
 <?php get_header() ?>
-<?php // https://developer.wordpress.org/themes/basics/the-loop/?>
+    <h1>Home</h1>
+    <?php // https://developer.wordpress.org/themes/basics/the-loop/?>
     <?php if (have_posts()): ?>
         <div class="row">
 

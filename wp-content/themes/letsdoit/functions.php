@@ -6,6 +6,7 @@ function letsdoit_supports (){
     add_theme_support('menus');
     register_nav_menu('header', 'menu header');
     register_nav_menu('footer', 'menu footer');
+    add_image_size('post-thumbnail', 350, 215, true);
 }
 
 function letsdoit_register_assets(){

@@ -22,11 +22,9 @@
         
         </div>
 
-        <nav aria-label="Page navigation example">
-            <ul class="pagination">
-            <?= paginate_links(['type' => 'list']); ?>
-            </ul>
-        </nav>
+        <?php letsdoit_pagination() ?>
+
+        
 
         <?= paginate_links(); ?>
 

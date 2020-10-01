@@ -21,6 +21,15 @@
             <?php endwhile ?>
         
         </div>
+
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+            <?= paginate_links(['type' => 'list']); ?>
+            </ul>
+        </nav>
+
+        <?= paginate_links(); ?>
+
     <?php else: ?>
         <h1>No articles</h1>
     <?php endif; ?>

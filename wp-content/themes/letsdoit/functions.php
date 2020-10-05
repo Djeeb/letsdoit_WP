@@ -16,6 +16,7 @@ function letsdoit_register_assets(){
     wp_deregister_script('jquery'); // Disable Bootstrap's default jQuery
     wp_register_script('jquery', 'https://code.jquery.com/jquery-3.5.1.slim.min.js', [], false, true); // Enable our Bootstrap
     wp_enqueue_style('bootstrap'); // https://developer.wordpress.org/reference/functions/wp_enqueue_style/
+    wp_enqueue_script('bootstrap');
 }
 
 function letsdoit_title_separator(){
@@ -60,8 +61,6 @@ add_action('wp_enqueue_scripts', 'letsdoit_register_assets'); // https://develop
 add_filter('document_title_separator', 'letsdoit_title_separator'); // https://developer.wordpress.org/reference/functions/wp_get_document_title/
 add_filter('nav_menu_css_class', 'letsdoit_menu_class');
 add_filter('nav_menu_link_attributes', 'letsdoit_menu_link_class');
-add_action('add_meta_boxes', 'letsdoit_add_custom_box'); // https://developer.wordpress.org/reference/hooks/add_meta_boxes/
-add_action('save_post', 'letsdoit_save_sponso');
 
 require_once('metaboxes/sponso.php');
 

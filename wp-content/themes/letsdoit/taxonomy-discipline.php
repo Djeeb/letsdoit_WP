@@ -1,6 +1,12 @@
 <?php get_header() ?>
 
+<h1><?= esc_html(get_queried_object()->name) ?></h1>
+<p>
+    <?= esc_html(get_queried_object()->description) ?>
+</p>
+
 <?php $disciplines = get_terms(['taxonomy' => 'discipline']); // https://developer.wordpress.org/reference/functions/get_terms/ ?>
+<?php if (is_array($sports)): ?>
 <ul class="nav nav-pills">
     <?php foreach($disciplines as $discipline): ?>
     <li class="nav-item my-4">
@@ -10,6 +16,7 @@
     </li>
     <?php endforeach; ?>
 </ul>
+<?php endif ?>
 
     <?php if (have_posts()): // https://developer.wordpress.org/themes/basics/the-loop/ ?>
         <div class="row">

@@ -94,5 +94,7 @@ add_filter('nav_menu_css_class', 'letsdoit_menu_class');
 add_filter('nav_menu_link_attributes', 'letsdoit_menu_link_class');
 
 require_once('metaboxes/sponso.php');
+require_once('options/gallery.php');
 
 SponsoMetaBox::register();
+GalleryMenuPage::register();

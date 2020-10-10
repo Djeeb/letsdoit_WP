@@ -57,24 +57,33 @@ function letsdoit_pagination(){
 }
 
 function letsdoit_init (){
-register_taxonomy('discipline', 'post', [
-    // https://developer.wordpress.org/reference/functions/get_taxonomy_labels/
-    'labels' => [
-        'name' => 'Discipline',
-        'singular_name'     =>  'Discipline',
-        'plural_name'       =>  'Discipline',
-        'search_items'      =>  'Search disciplines',
-        'all_items'         =>  'All disciplines',
-        'edit_item'         =>  'Edit discipline',
-        'update_item'       =>  'Update discipline',
-        'add_new_item'      =>  'Add new discipline',
-        'new_item_name'     =>  'Add new discipline name',
-        'menu_name'         =>  'Discipline',
-    ],
-    'show_in_rest'  => true, // https://developer.wordpress.org/reference/functions/register_taxonomy/
-    'hierarchical'  => true,
-    'show_admin_column' => true,
-]);
+    register_taxonomy('discipline', 'post', [
+        // https://developer.wordpress.org/reference/functions/get_taxonomy_labels/
+        'labels' => [
+            'name' => 'Discipline',
+            'singular_name'     =>  'Discipline',
+            'plural_name'       =>  'Disciplines',
+            'search_items'      =>  'Search disciplines',
+            'all_items'         =>  'All disciplines',
+            'edit_item'         =>  'Edit discipline',
+            'update_item'       =>  'Update discipline',
+            'add_new_item'      =>  'Add new discipline',
+            'new_item_name'     =>  'Add new discipline name',
+            'menu_name'         =>  'Discipline',
+        ],
+        'show_in_rest'  => true, // https://developer.wordpress.org/reference/functions/register_taxonomy/
+        'hierarchical'  => true,
+        'show_admin_column' => true,
+    ]);
+    register_post_type('artwork', [ // https://developer.wordpress.org/reference/functions/register_post_type/
+        'label' => 'Artwork',
+        'public' => true,
+        'menu_position' => 3,
+        'menu_icon' => 'dashicons-building', // https://developer.wordpress.org/resource/dashicons/#screenoptions
+        'show_in_rest' => true,
+        'supports' => ['title', 'editor', 'thumbnail'],
+        'has_archive' => 'true',
+        ]);
 }
 
 add_action('init','letsdoit_init');

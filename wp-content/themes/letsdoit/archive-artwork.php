@@ -1,15 +1,6 @@
 <?php get_header() ?>
 
-<?php $disciplines = get_terms(['taxonomy' => 'discipline']); // https://developer.wordpress.org/reference/functions/get_terms/ ?>
-<ul class="nav nav-pills">
-    <?php foreach($disciplines as $discipline): ?>
-    <li class="nav-item my-4">
-        <a href="<?= get_term_link($discipline) ?>" 
-        class="nav-link <?= is_tax('discipline', $discipline->term_id) ? 'active' : '' ?>">
-        <?= $discipline->name ?></a>
-    </li>
-    <?php endforeach; ?>
-</ul>
+    <h1>See all our artworks</h1>
 
     <?php if (have_posts()): // https://developer.wordpress.org/themes/basics/the-loop/ ?>
         <div class="row">
@@ -23,7 +14,6 @@
         </div>
 
         <?php letsdoit_pagination() ?>
-
         <?= paginate_links(); ?>
 
     <?php else: ?>

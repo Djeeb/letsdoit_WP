@@ -165,3 +165,17 @@ function letsdoit_query_vars ($params) {
 
 add_action('pre_get_posts', 'letsdoit_pre_get_posts');
 add_filter('query_vars', 'letsdoit_query_vars');
+
+function lestdoit_register_widget(){
+    register_sidebar([
+        'id' => 'homepage',
+        'name' => 'Sidebar Home',
+        'description' => 'Here the description',
+        'before_widget' => '<div class="p-4 %2$s" id="%1$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h4 class="font-italic">',
+        'after_title' => '</h4>'
+    ]);
+}
+
+add_action('widgets_init', 'lestdoit_register_widget');

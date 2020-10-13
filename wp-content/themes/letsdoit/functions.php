@@ -1,9 +1,12 @@
 <?php
 
+require_once('walker/CommentWalker.php');
+
 function letsdoit_supports (){
     add_theme_support('title-tag'); // https://developer.wordpress.org/reference/functions/add_theme_support/
     add_theme_support('post-thumbnails');
     add_theme_support('menus');
+    add_theme_support('html5');
     register_nav_menu('header', 'menu header');
     register_nav_menu('footer', 'menu footer');
     add_image_size('post-thumbnail', 350, 215, true);
@@ -182,3 +185,19 @@ function lestdoit_register_widget(){
 }
 
 add_action('widgets_init', 'lestdoit_register_widget');
+
+add_filter('comment_form_default_fields', function ($fields){
+    $fields['author'] = <<<HTML
+    <div class="form-group"><label for="author">Author*</label><input class="form-control" name="author" id="author" required></div>
+HTML;
+    $fields['email'] = <<<HTML
+    <div class="form-group"><label for="email">Email*</label><input class="form-control" name="email" id="email" required></div>
+HTML;
+    $fields['url'] = <<<HTML
+    <div class="form-group"><label for="url">Website*</label><input class="form-control" name="url" id="url" required></div>
+HTML;
+    $fields['cookies'] = <<<HTML
+    <div class="form-check"><input class="form-check-input" type="checkbox" value="" id="defaultCheck1"><label for="cookies">Save my name, e-mail and website in the browser for my next comment.</label></div>
+HTML;
+    return $fields;
+});

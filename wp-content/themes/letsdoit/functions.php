@@ -201,3 +201,7 @@ HTML;
 HTML;
     return $fields;
 });
+
+add_action('after_switch_theme', 'flush_rewrite_rules');
+
+add_action('switch_theme', 'flush_rewrite_rules');

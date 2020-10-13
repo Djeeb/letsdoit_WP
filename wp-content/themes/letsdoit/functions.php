@@ -166,7 +166,10 @@ function letsdoit_query_vars ($params) {
 add_action('pre_get_posts', 'letsdoit_pre_get_posts');
 add_filter('query_vars', 'letsdoit_query_vars');
 
+require_once 'widgets/YoutubeWidget.php';
+
 function lestdoit_register_widget(){
+    register_widget(YoutubeWidget::class);
     register_sidebar([
         'id' => 'homepage',
         'name' => 'Sidebar Home',

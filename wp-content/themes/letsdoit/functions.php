@@ -2,6 +2,7 @@
 
 require_once('walker/CommentWalker.php');
 require_once('options/apparence.php');
+require_once('options/cron.php');
 
 function letsdoit_supports (){
     add_theme_support('title-tag'); // https://developer.wordpress.org/reference/functions/add_theme_support/

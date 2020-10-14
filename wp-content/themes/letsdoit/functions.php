@@ -178,7 +178,7 @@ function lestdoit_register_widget(){
     register_widget(YoutubeWidget::class);
     register_sidebar([
         'id' => 'homepage',
-        'name' => 'Sidebar Home',
+        'name' => __('Sidebar Home', 'letsdoit'),
         'description' => 'Here the description',
         'before_widget' => '<div class="p-4 %2$s" id="%1$s">',
         'after_widget' => '</div>',

@@ -13,7 +13,7 @@
     <button type="submit" class="btn btn-primary mb-2">Submit</button>
     </form>
 
-    <h1 class="mb-4">Result for your search "<?= get_search_query() ?>"</h1>
+    <h1 class="mb-4"><?= sprintf(apply_filters('letsdoit_search_title', "Result for your search \"%s\""), get_search_query()) ?></h1>
 
     <?php if (have_posts()): // https://developer.wordpress.org/themes/basics/the-loop/ ?>
         <div class="row">

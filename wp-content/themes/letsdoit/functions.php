@@ -81,15 +81,7 @@ function letsdoit_init (){
         'hierarchical'  => true,
         'show_admin_column' => true,
     ]);
-    register_post_type('artwork', [ // https://developer.wordpress.org/reference/functions/register_post_type/
-        'label' => 'Artwork',
-        'public' => true,
-        'menu_position' => 3,
-        'menu_icon' => 'dashicons-building', // https://developer.wordpress.org/resource/dashicons/#screenoptions
-        'show_in_rest' => true,
-        'supports' => ['title', 'editor', 'thumbnail'],
-        'has_archive' => 'true',
-        ]);
+    
 }
 
 add_action('init','letsdoit_init');

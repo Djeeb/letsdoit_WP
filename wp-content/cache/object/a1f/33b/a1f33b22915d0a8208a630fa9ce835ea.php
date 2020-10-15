@@ -1,1 +1,1 @@
-?…ˆ_<?php exit; ?>a:1:{s:7:"content";s:189:"{"common.install":1602781925,"common.install_version":"0.15.1","license.status":"no_key","license.next_check":1603213925,"license.terms":"","common.hide_note_wp_content_permissions":"true"}";}
+­¢ˆ_<?php exit; ?>a:1:{s:7:"content";s:189:"{"common.install":1602781925,"common.install_version":"0.15.1","license.status":"no_key","license.next_check":1603213925,"license.terms":"","common.hide_note_wp_content_permissions":"true"}";}

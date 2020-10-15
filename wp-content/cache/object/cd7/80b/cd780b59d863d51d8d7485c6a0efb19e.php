@@ -1,4 +1,4 @@
-Y��_<?php exit; ?>a:1:{s:7:"content";O:8:"stdClass":24:{s:2:"ID";i:2;s:11:"post_author";s:1:"1";s:9:"post_date";s:19:"2020-09-28 16:45:31";s:13:"post_date_gmt";s:19:"2020-09-28 14:45:31";s:12:"post_content";s:1595:"<!-- wp:paragraph -->
+d��_<?php exit; ?>a:1:{s:7:"content";O:8:"stdClass":24:{s:2:"ID";i:2;s:11:"post_author";s:1:"1";s:9:"post_date";s:19:"2020-09-28 16:45:31";s:13:"post_date_gmt";s:19:"2020-09-28 14:45:31";s:12:"post_content";s:1595:"<!-- wp:paragraph -->
 <p>Ceci est une page d’exemple. C’est différent d’un article de blog parce qu’elle restera au même endroit et apparaîtra dans la navigation de votre site (dans la plupart des thèmes). La plupart des gens commencent par une page «&nbsp;À propos&nbsp;» qui les présente aux visiteurs du site. Cela pourrait ressembler à quelque chose comme cela&nbsp;:</p>
 <!-- /wp:paragraph -->
 

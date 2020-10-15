@@ -251,3 +251,20 @@ add_filter( 'rest_authentication_errors', function( $result ) {
     }
     return $result;
  }, 9);
+
+ function letsdoitReadData(){
+     $data = wp_cache_get('data', 'letsdoit');
+     if ($data === false){
+         var_dump('je lis');
+         $data = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . 'data');
+         wp_cache_set('data', $data, 'letsdoit', 60);
+     }
+     return $data;
+ }
+
+ if (isset($_GET['cachetest'])){
+     var_dump(letsdoitReadData());
+     var_dump(letsdoitReadData());
+     var_dump(letsdoitReadData());
+     die();
+ }

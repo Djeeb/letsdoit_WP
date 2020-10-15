@@ -201,3 +201,17 @@ HTML;
 add_action('after_switch_theme', 'flush_rewrite_rules');
 
 add_action('switch_theme', 'flush_rewrite_rules');
+
+/** @var wpdb $wpdb */
+global $wpdb;
+
+var_dump($wpdb->terms);
+
+// https://developer.wordpress.org/reference/classes/wpdb/
+$tag = "tag1";
+$query = $wpdb->prepare("SELECT name FROM {$wpdb->terms} WHERE slug=%s", [$tag]); // https://developer.wordpress.org/reference/classes/wpdb/#update-rows
+$results = $wpdb->get_results($query);
+echo '<pre>';
+var_dump($results);
+echo '</pre>';
+die();

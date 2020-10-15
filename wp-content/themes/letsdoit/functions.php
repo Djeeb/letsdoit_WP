@@ -205,13 +205,49 @@ add_action('switch_theme', 'flush_rewrite_rules');
 /** @var wpdb $wpdb */
 global $wpdb;
 
+/*
 var_dump($wpdb->terms);
 
 // https://developer.wordpress.org/reference/classes/wpdb/
 $tag = "tag1";
 $query = $wpdb->prepare("SELECT name FROM {$wpdb->terms} WHERE slug=%s", [$tag]); // https://developer.wordpress.org/reference/classes/wpdb/#update-rows
 $results = $wpdb->get_results($query);
+
+
 echo '<pre>';
 var_dump($results);
 echo '</pre>';
 die();
+*/
+
+// Api : https://developer.wordpress.org/rest-api/
+add_action('rest_api_init', function () {
+    register_rest_route('letsdoit/v1', '/demo/(?P<id>\d+)', [
+        'methods' => 'GET',
+        'callback' => function (WP_REST_Request $request) {
+            $postID = (int)$request->get_param('id');
+            $post = get_post($postID);
+            if ($post === null) {
+                return new WP_Error('nothing', 'Nothing to tell', ['status' => 404]);
+            }
+            return $post->post_title;
+        },
+        'permission_callback' => function () {
+            return current_user_can('edit_posts');
+        }
+    ]);
+});
+
+
+add_filter( 'rest_authentication_errors', function( $result ) {
+    if ( true === $result || is_wp_error( $result ) ) {
+        return $result;
+    }
+
+    /** @var WP $wp */
+    global $wp;
+    if (strpos($wp->query_vars['rest_route'], 'letsdoit/v1') !== false) {
+        return true;
+    }
+    return $result;
+ }, 9);
